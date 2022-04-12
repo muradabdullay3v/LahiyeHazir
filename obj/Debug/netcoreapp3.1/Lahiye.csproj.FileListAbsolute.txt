@@ -1,0 +1,14 @@
+C:\Users\Murad\source\repos\Lahiye\Lahiye\bin\Debug\netcoreapp3.1\Lahiye.exe
+C:\Users\Murad\source\repos\Lahiye\Lahiye\bin\Debug\netcoreapp3.1\Lahiye.deps.json
+C:\Users\Murad\source\repos\Lahiye\Lahiye\bin\Debug\netcoreapp3.1\Lahiye.runtimeconfig.json
+C:\Users\Murad\source\repos\Lahiye\Lahiye\bin\Debug\netcoreapp3.1\Lahiye.runtimeconfig.dev.json
+C:\Users\Murad\source\repos\Lahiye\Lahiye\bin\Debug\netcoreapp3.1\Lahiye.dll
+C:\Users\Murad\source\repos\Lahiye\Lahiye\bin\Debug\netcoreapp3.1\Lahiye.pdb
+C:\Users\Murad\source\repos\Lahiye\Lahiye\obj\Debug\netcoreapp3.1\Lahiye.csproj.AssemblyReference.cache
+C:\Users\Murad\source\repos\Lahiye\Lahiye\obj\Debug\netcoreapp3.1\Lahiye.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Murad\source\repos\Lahiye\Lahiye\obj\Debug\netcoreapp3.1\Lahiye.AssemblyInfoInputs.cache
+C:\Users\Murad\source\repos\Lahiye\Lahiye\obj\Debug\netcoreapp3.1\Lahiye.AssemblyInfo.cs
+C:\Users\Murad\source\repos\Lahiye\Lahiye\obj\Debug\netcoreapp3.1\Lahiye.csproj.CoreCompileInputs.cache
+C:\Users\Murad\source\repos\Lahiye\Lahiye\obj\Debug\netcoreapp3.1\Lahiye.dll
+C:\Users\Murad\source\repos\Lahiye\Lahiye\obj\Debug\netcoreapp3.1\Lahiye.pdb
+C:\Users\Murad\source\repos\Lahiye\Lahiye\obj\Debug\netcoreapp3.1\Lahiye.genruntimeconfig.cache
