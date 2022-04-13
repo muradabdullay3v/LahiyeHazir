@@ -7,7 +7,6 @@ namespace Lahiye_
     {
         static void Main(string[] args)
         {
-            List<Student> StudentsList = new List<Student>();
             List<Student> ObshiStuList = new List<Student>();
             List<Group> GroupsList = new List<Group>();
             bool isGroup = false;
@@ -41,11 +40,11 @@ namespace Lahiye_
                     case 2:
                         if (isGroup)
                         {
-                            ShowInfo(GroupsList, StudentsList);
+                            ShowInfo(GroupsList);
                         }
                         else
                         {
-                            Console.WriteLine("Qruplar yaradilmayib!!");
+                            Console.WriteLine("Qruplar yaradilmayib!!\n");
                         }
                         break;
                     case 3:
@@ -64,6 +63,7 @@ namespace Lahiye_
                             {
                                 if (item.No == qrupsech.ToUpper())
                                 {
+                                    YeniAd:
                                     Console.Write("Yeni adi daxil edin : ");
                                     string newad = Console.ReadLine().ToUpper();
                                     Console.WriteLine("\n");
@@ -72,10 +72,16 @@ namespace Lahiye_
                                         if (item1.No != newad)
                                         {
                                             item.No = newad;
+                                            for(int b = 0; b < item.studentslist.Count; b++)
+                                            {
+                                              item.studentslist[b].GroupNo = item.No;
+                                            } 
                                         }
                                         else
                                         {
                                             Console.WriteLine("Bele qrup artiq var!!\n");
+                                            goto YeniAd;
+                                           
                                         }
                                     }
                                 }
@@ -87,13 +93,13 @@ namespace Lahiye_
                         }
                         else
                         {
-                            Console.WriteLine("Qruplar hele yaradilmayib!!");
+                            Console.WriteLine("Qruplar hele yaradilmayib!!\n");
                         }
                         
 
                         break;
                     case 4:
-                        if (isGroup)
+                        if (isGroup && isStu)
                         {
                             Console.Write("Telebeleri gosterilecek qrupun adini daxil edin : ");
                             string qrupadi = Console.ReadLine();
@@ -118,20 +124,26 @@ namespace Lahiye_
                         }
                         else
                         {
-                            Console.WriteLine("Qruplar hele yaradilmayiblar");
+                            Console.WriteLine("Qruplar ve ya shagirdler hele yaradilmayiblar!\n");
                         }
                         break;
                     case 5:
+                        if(isStu)
                         foreach (var item in ObshiStuList)
                         {
                             Console.WriteLine($"Adi : {item.Fullname}\nGroup : {item.GroupNo}\nZemaneti : {item.Type}\n");
                         }
+                        else
+                            Console.WriteLine("Studentler hele yaradilmayiblar!\n");
                         break;
                     case 6:
-                        if(isGroup)
-                        AddStudent(ref StudentsList, ObshiStuList, GroupsList);
+                        if (isGroup)
+                        {
+                            AddStudent(ObshiStuList, GroupsList);
+                            isStu = true;
+                        }
                         else
-                            Console.WriteLine("Qruplar hele yaradilmayib!!");
+                            Console.WriteLine("Qruplar hele yaradilmayib!!\n");
                         break;
                     case 7:
                         Console.WriteLine("Proqram sona catdi !!\n");
@@ -186,7 +198,7 @@ namespace Lahiye_
             }
         }
 
-        static void ShowInfo(List<Group> GroupsList, List<Student> StudentsList)
+        static void ShowInfo(List<Group> GroupsList)
         {
             foreach (var item in GroupsList)
             {
@@ -194,13 +206,12 @@ namespace Lahiye_
             }
         }
 
-        static void AddStudent(ref List<Student> StudentsList, List<Student> ObshiStuList, List<Group> GroupsList)
+        static void AddStudent(List<Student> ObshiStuList, List<Group> GroupsList)
         {
             int typecheck = 0;
             Console.Write("Yaratmaq istediyiniz studentlerin sayini daxil edin : ");
             int count = int.Parse(Console.ReadLine());
             Console.WriteLine("\n");
-            StudentsList = new List<Student>();
             Student[] Students = new Student[count];
             for (int i = 0; i < count; i++)
             {
@@ -251,7 +262,7 @@ namespace Lahiye_
                     if (selectgroup.ToUpper() == item.No)
                     {
                         Students[i].GroupNo = item.No;
-                        GroupsList[i].studentslist.Add(Students[i]);
+                        item.studentslist.Add(Students[i]);
                         var = true;
                     }
                 }
